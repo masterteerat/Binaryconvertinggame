@@ -4,7 +4,7 @@ ms = 0
 sec = 0
 ans = 0
 #ascii2 = randint(48, 57)
-life = 5
+life = 3
 weight = 7
 #basic.show_string(String.from_char_code(ascii2))
 
@@ -43,14 +43,15 @@ while True:
         #time out        
         if sec > 11:
             basic.show_icon(IconNames.SAD)
-            break
-        if life < 3:
-            basic.show_icon(IconNames.SAD)
-            break          
+            break       
         ms = ms + 300
         sec = ms // 1000
-        basic.pause(300)    
-    
+        basic.pause(300) 
+    #Game over checker
+    if life == 0:
+        basic.show_icon(IconNames.SAD)
+        break       
+    #Win checker
     if score == 5:
         basic.show_icon(IconNames.HAPPY)
         break    

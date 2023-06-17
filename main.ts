@@ -5,7 +5,7 @@ let ms = 0
 let sec = 0
 let ans = 0
 // ascii2 = randint(48, 57)
-let life = 5
+let life = 3
 let weight = 7
 // basic.show_string(String.from_char_code(ascii2))
 while (true) {
@@ -55,15 +55,17 @@ while (true) {
             break
         }
         
-        if (life < 3) {
-            basic.showIcon(IconNames.Sad)
-            break
-        }
-        
         ms = ms + 300
         sec = Math.idiv(ms, 1000)
         basic.pause(300)
     }
+    // Game over checker
+    if (life == 0) {
+        basic.showIcon(IconNames.Sad)
+        break
+    }
+    
+    // Win checker
     if (score == 5) {
         basic.showIcon(IconNames.Happy)
         break
