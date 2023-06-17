@@ -7,6 +7,7 @@ let ascii2: number;
 // Initialize starting var
 let lvl = 1
 let score = 0
+let timeout = 0
 // level loop
 while (true) {
     // Initialize var
@@ -18,21 +19,25 @@ while (true) {
     // Random ascii char
     if (lvl == 1) {
         ascii2 = randint(48, 57)
+        timeout = 20
     }
     
     if (lvl == 2) {
         ascii2 = randint(65, 90)
+        timeout = 17
     }
     
     if (lvl == 3) {
         ascii2 = randint(65, 122)
+        timeout = 14
     }
     
     if (lvl == 4) {
         ascii2 = randint(48, 126)
+        timeout = 10
     }
     
-    ascii2 = 255
+    // ascii2 = 255
     basic.showString(String.fromCharCode(ascii2))
     // round loop
     while (true) {
@@ -63,13 +68,14 @@ while (true) {
         }
         
         // time out warning        
-        if (sec >= 6) {
+        if (sec >= timeout - 5) {
             music.play(music.stringPlayable("F F - - - - - - ", 500), music.PlaybackMode.InBackground)
         }
         
         // time out        
-        if (sec > 11) {
-            basic.showIcon(IconNames.Sad)
+        if (sec > timeout) {
+            basic.showIcon(IconNames.No)
+            life += -1
             break
         }
         
@@ -88,8 +94,8 @@ while (true) {
         basic.showIcon(IconNames.Happy)
         // level up
         score = 0
+        life = 3
         lvl += 1
-        break
     }
     
 }

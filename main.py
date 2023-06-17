@@ -1,6 +1,7 @@
 #Initialize starting var
 lvl = 1
 score = 0
+timeout = 0
 
 #level loop
 while True:
@@ -13,13 +14,17 @@ while True:
     #Random ascii char
     if lvl == 1:
         ascii2 = randint(48, 57)
+        timeout = 20
     if lvl == 2:
         ascii2 = randint(65, 90)
+        timeout = 17
     if lvl == 3:
         ascii2 = randint(65, 122)
+        timeout = 14
     if lvl == 4:
         ascii2 = randint(48, 126)
-    ascii2 = 255
+        timeout = 10
+    #ascii2 = 255
     basic.show_string(String.from_char_code(ascii2))
     #round loop
     while True:
@@ -42,12 +47,13 @@ while True:
                 life += -1
                 break
         #time out warning        
-        if sec >= 6:
+        if sec >= (timeout - 5):
             music.play(music.string_playable("F F - - - - - - ", 500),
                 music.PlaybackMode.IN_BACKGROUND)
         #time out        
-        if sec > 11:
-            basic.show_icon(IconNames.SAD)
+        if sec > timeout:
+            basic.show_icon(IconNames.NO)
+            life += -1
             break       
         ms = ms + 300
         sec = ms // 1000
@@ -61,5 +67,6 @@ while True:
         basic.show_icon(IconNames.HAPPY)
         #level up
         score = 0
+        life = 3
         lvl += 1
-        break    
+            
