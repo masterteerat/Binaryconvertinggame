@@ -9,9 +9,12 @@ let life = 5
 let weight = 7
 // basic.show_string(String.from_char_code(ascii2))
 while (true) {
+    // Initial var
     ms = 0
     sec = 0
     ans = 0
+    weight = 7
+    // Random ascii char
     ascii2 = 255
     basic.showString(String.fromCharCode(ascii2))
     while (true) {
@@ -41,10 +44,12 @@ while (true) {
             
         }
         
+        // time out warning        
         if (sec >= 6) {
             music.play(music.stringPlayable("F F - - - - - - ", 500), music.PlaybackMode.InBackground)
         }
         
+        // time out        
         if (sec > 11) {
             basic.showIcon(IconNames.Sad)
             break
@@ -59,7 +64,6 @@ while (true) {
         sec = Math.idiv(ms, 1000)
         basic.pause(300)
     }
-    weight = 0
     if (score == 5) {
         basic.showIcon(IconNames.Happy)
         break

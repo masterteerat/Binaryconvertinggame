@@ -9,9 +9,12 @@ weight = 7
 #basic.show_string(String.from_char_code(ascii2))
 
 while True:
+    #Initial var
     ms = 0
     sec = 0
     ans = 0    
+    weight = 7
+    #Random ascii char
     ascii2 = 255
     basic.show_string(String.from_char_code(ascii2))
     while True:
@@ -33,9 +36,11 @@ while True:
                 basic.show_icon(IconNames.NO)
                 life += -1
                 break
+        #time out warning        
         if sec >= 6:
             music.play(music.string_playable("F F - - - - - - ", 500),
                 music.PlaybackMode.IN_BACKGROUND)
+        #time out        
         if sec > 11:
             basic.show_icon(IconNames.SAD)
             break
@@ -44,8 +49,7 @@ while True:
             break          
         ms = ms + 300
         sec = ms // 1000
-        basic.pause(300)
-    weight = 0    
+        basic.pause(300)    
     
     if score == 5:
         basic.show_icon(IconNames.HAPPY)
