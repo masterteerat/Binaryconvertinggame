@@ -5,6 +5,7 @@ let ms = 0
 let sec = 0
 let ans = 0
 // ascii2 = randint(48, 57)
+let life = 5
 let weight = 7
 // basic.show_string(String.from_char_code(ascii2))
 while (true) {
@@ -34,7 +35,7 @@ while (true) {
             
             if (ans != ascii2) {
                 basic.showIcon(IconNames.No)
-                let life += -1
+                life += -1
                 break
             }
             

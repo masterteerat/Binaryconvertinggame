@@ -4,6 +4,7 @@ ms = 0
 sec = 0
 ans = 0
 #ascii2 = randint(48, 57)
+life = 5
 weight = 7
 #basic.show_string(String.from_char_code(ascii2))
 
