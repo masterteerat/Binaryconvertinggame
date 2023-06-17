@@ -1,22 +1,24 @@
+let ms: number;
+let sec: number;
+let ans: number;
+let weight: number;
+let life: number;
 let ascii2: number;
+// Initialize starting var
+let lvl = 1
 let score = 0
-// ascii2 = 255
-let ms = 0
-let sec = 0
-let ans = 0
-// ascii2 = randint(48, 57)
-let life = 3
-let weight = 7
-// basic.show_string(String.from_char_code(ascii2))
+// level loop
 while (true) {
-    // Initial var
+    // Initialize var
     ms = 0
     sec = 0
     ans = 0
     weight = 7
+    life = 3
     // Random ascii char
     ascii2 = 255
     basic.showString(String.fromCharCode(ascii2))
+    // round loop
     while (true) {
         if (input.buttonIsPressed(Button.A)) {
             music.play(music.stringPlayable("C5 C5 B B C5 - - - ", 1500), music.PlaybackMode.InBackground)

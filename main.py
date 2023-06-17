@@ -1,22 +1,19 @@
+#Initialize starting var
+lvl = 1
 score = 0
-#ascii2 = 255
-ms = 0
-sec = 0
-ans = 0
-#ascii2 = randint(48, 57)
-life = 3
-weight = 7
-#basic.show_string(String.from_char_code(ascii2))
 
+#level loop
 while True:
-    #Initial var
+    #Initialize var
     ms = 0
     sec = 0
     ans = 0    
     weight = 7
+    life = 3
     #Random ascii char
     ascii2 = 255
     basic.show_string(String.from_char_code(ascii2))
+    #round loop
     while True:
         if input.button_is_pressed(Button.A):
             music.play(music.string_playable("C5 C5 B B C5 - - - ", 1500),
