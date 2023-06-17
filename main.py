@@ -28,12 +28,12 @@ while True:
     basic.show_string(String.from_char_code(ascii2))
     #round loop
     while True:
-        if input.button_is_pressed(Button.A):
+        if input.button_is_pressed(Button.B):
             music.play(music.string_playable("C5 C5 B B C5 - - - ", 1500),
                 music.PlaybackMode.IN_BACKGROUND)
             ans = ans + 2 ** weight
             weight += -1
-        if input.button_is_pressed(Button.B):
+        if input.button_is_pressed(Button.A):
             music.play(music.string_playable("E E F F G - - - ", 1500),
                 music.PlaybackMode.IN_BACKGROUND)
             weight += -1
@@ -69,4 +69,7 @@ while True:
         score = 0
         life = 3
         lvl += 1
+        if level == 5:
+            basic.show_string("You Win!")
+            break
             
