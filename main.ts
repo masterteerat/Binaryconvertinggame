@@ -16,6 +16,22 @@ while (true) {
     weight = 7
     life = 3
     // Random ascii char
+    if (lvl == 1) {
+        ascii2 = randint(48, 57)
+    }
+    
+    if (lvl == 2) {
+        ascii2 = randint(65, 90)
+    }
+    
+    if (lvl == 3) {
+        ascii2 = randint(65, 122)
+    }
+    
+    if (lvl == 4) {
+        ascii2 = randint(48, 126)
+    }
+    
     ascii2 = 255
     basic.showString(String.fromCharCode(ascii2))
     // round loop
@@ -70,6 +86,9 @@ while (true) {
     // Win checker
     if (score == 5) {
         basic.showIcon(IconNames.Happy)
+        // level up
+        score = 0
+        lvl += 1
         break
     }
     
