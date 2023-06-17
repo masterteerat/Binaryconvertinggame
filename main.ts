@@ -1,6 +1,8 @@
 let ans = 0
 let ascii2 = randint(48, 57)
 // ascii2 = 255
+let t = 0
+let T = 0
 let weight = 7
 basic.showString(String.fromCharCode(ascii2))
 while (true) {
@@ -15,9 +17,10 @@ while (true) {
         weight += -1
     }
     
-    if (weight == 0) {
+    if (weight == -1) {
         if (ans == ascii2) {
             basic.showIcon(IconNames.Yes)
+            basic.showNumber(T)
             break
         }
         
@@ -28,5 +31,7 @@ while (true) {
         
     }
     
+    t = t + 300
+    T = Math.idiv(t, 1000)
     basic.pause(300)
 }
